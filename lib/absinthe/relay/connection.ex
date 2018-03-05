@@ -388,7 +388,7 @@ defmodule Absinthe.Relay.Connection do
 
         opts = [
           has_next_page: args[:first] != nil && length(records) > limit,
-          has_previous_page: args[:last] != nil && offset > 0,
+          has_previous_page: offset > 0,
         ] ++ opts
 
         from_slice(Enum.take(records, limit), offset, opts)

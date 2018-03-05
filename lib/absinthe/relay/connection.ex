@@ -387,7 +387,7 @@ defmodule Absinthe.Relay.Connection do
           |> repo_fun.()
 
         opts = [
-          has_next_page: args[:first] != nil && length(records) > limit,
+          has_next_page: length(records) > limit,
           has_previous_page: offset > 0,
         ] ++ opts
 
